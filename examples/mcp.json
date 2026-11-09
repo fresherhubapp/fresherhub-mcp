@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fresherhub": {
+      "type": "http",
+      "url": "https://fresherhub.app/mcp"
+    }
+  }
+}

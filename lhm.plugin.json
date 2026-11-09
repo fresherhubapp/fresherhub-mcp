@@ -1,0 +1,81 @@
+{
+  "identifier": "fresherhub",
+  "name": "FresherHub",
+  "version": "1.0.0",
+  "author": "FresherHub",
+  "authorUrl": "https://github.com/fresherhubapp",
+  "cloudEndpoint": "https://fresherhub.app/mcp",
+  "description": "Read-only job-readiness data for freshers in tech from FresherHub (https://fresherhub.app): 11 entry-level roles, the skills each role needs, the proof that counts for each skill, and a step-by-step readiness checklist. No auth, no user data.",
+  "homepage": "https://fresherhub.app",
+  "icon": "https://fresherhub.app/icon.svg",
+  "tags": [
+    "careers",
+    "jobs",
+    "freshers",
+    "job-readiness",
+    "skills",
+    "tech-roles",
+    "students",
+    "education"
+  ],
+  "tools": [
+    {
+      "name": "list_roles",
+      "title": "List fresher tech roles",
+      "description": "List the entry-level tech roles FresherHub checks job readiness for (Backend, Frontend, Data Analyst, AI Engineer and more), with a link to each role's requirements page.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_role_skills",
+      "title": "Get a role's required skills and proof",
+      "description": "Get the skills a fresher needs for one tech role: area, must-have flag, share of the readiness score, and the evidence (resume, GitHub, portfolio) that proves each skill.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "Role slug from list_roles (for example \"backend-developer\") or the role name (\"Backend Developer\")."
+          }
+        },
+        "required": [
+          "role"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_readiness_checklist",
+      "title": "Get a fresher job-readiness checklist",
+      "description": "Get a step-by-step job-readiness checklist for one tech role: the stages in order, the skills in each stage and the concrete actions that build proof for them.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "Role slug from list_roles (for example \"backend-developer\") or the role name (\"Backend Developer\")."
+          }
+        },
+        "required": [
+          "role"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    }
+  ]
+}
